@@ -1,0 +1,243 @@
+/* ==========================
+   GENERAL STYLES
+========================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f2f5;
+    scroll-behavior: smooth;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ==========================
+   NAVIGATION
+========================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo { font-size: 1.8rem; font-weight: bold; }
+nav ul { list-style: none; display: flex; margin: 0; padding: 0; transition: max-height 0.3s ease; }
+nav ul li { margin-left: 1.5rem; }
+nav ul li a { text-decoration: none; color: white; font-weight: 500; transition: color 0.3s; }
+nav ul li a:hover { color: #ff6b6b; }
+
+/* Hamburger icon */
+nav .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ==========================
+   HERO
+========================== */
+header {
+    position: relative;
+    background: url('https://www.bcda.gov.ph/sites/default/files/styles/featured_image_nid_750/public/2025-09/New%20Clark%20City%20%28annual%20report%29.jpg?itok=bWKBMoIS') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+}
+
+header h1, header .tagline { position: relative; z-index: 1; }
+header h1 { font-size: 4rem; margin: 0; }
+header .tagline { font-size: 1.8rem; margin-top: 0.5rem; font-style: italic; }
+
+/* ==========================
+   SECTIONS
+========================== */
+section { 
+    padding: 4rem 10%; 
+    border-radius: 10px; 
+    margin: 2rem 0; 
+    scroll-margin-top: 80px; 
+}
+
+/* ==========================
+   TOPIC SUMMARY
+========================== */
+.topic-summary {
+    position: relative;
+    background: url('https://www.lumina.com.ph/assets/news-and-blogs-photos/New-Clark-City-A-Game-Changer-for-Central-Luzon/New-Clark-City-A-Game-Changer-for-Central-Luzon.webp') no-repeat center center/cover;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.topic-summary::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+}
+
+.topic-summary h2,
+.topic-summary p { position: relative; z-index: 1; }
+.topic-summary h2 { color: white; }
+.topic-summary p { color: #f5f5f5; }
+
+/* ==========================
+   BACKGROUNDS
+========================== */
+#owner-profile { background-color: #f8f9fa; }
+#analysis { 
+    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center center/cover; 
+    color: white; 
+    position: relative; 
+}
+#history { background-color: #e6e6e6; position: relative; }
+#impacts { 
+    position: relative;
+    background: url('https://ejatlas.org/media/conflict/the-struggle-for-land-in-the-new-clark-city-project-in-tarlac/newclarkcity3.png') center/cover no-repeat;
+    color: white;
+    overflow: hidden;
+}
+#stakeholders { 
+    position: relative;
+    background: url('https://manage.thediplomat.com/wp-content/uploads/2020/01/thediplomat-2020-01-07-30.jpg') center/cover no-repeat;
+    color: white; 
+    overflow: hidden;
+}
+#recommendations { background-color: #e6e6e6; }
+#sources { background-color: #f8f9fa; }
+
+/* ==========================
+   OVERLAYS
+========================== */
+#analysis::before, #impacts::before, #stakeholders::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.4);
+    z-index:0;
+}
+
+#analysis > *, #impacts > *, #stakeholders .content { position: relative; z-index:1; }
+
+/* ==========================
+   HEADINGS
+========================== */
+h2 { color: #1a1a1a; margin-bottom:1rem; border-bottom:2px solid #ff6b6b; display:inline-block; padding-bottom:0.3rem; }
+#analysis h2, #impacts h2, #stakeholders h2 { color: white; border-color: #ffdede; }
+
+/* ==========================
+   OWNER PROFILE
+========================== */
+.owner-container { display:flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+.owner-card { background:#fff; border:1px solid #ddd; border-radius:10px; padding:1.5rem; width:250px; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+.owner-card:hover { transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.owner-card h3 { margin-top: 0; color: #1a1a1a; }
+.owner-card p { margin: 0.5rem 0; color: #555; }
+
+/* ==========================
+   IMPACTS & STAKEHOLDERS
+========================== */
+.impact-container, .stakeholders { display:flex; flex-wrap:wrap; gap:2rem; }
+.impact, .stakeholders > div { flex:1; min-width:300px; }
+.impact { background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 2rem; }
+
+/* ==========================
+   HISTORY IMAGE
+========================== */
+.history-content { max-width: 60%; }
+.history-img { position: absolute; top: 50%; right: 10%; transform: translateY(-50%); width: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+/* ==========================
+   FOOTER
+========================== */
+footer { text-align:center; padding:2rem; background-color:#1a1a1a; color:white; }
+
+/* ==========================
+   LINKS
+========================== */
+a { color:#ff6b6b; text-decoration:none; }
+a:hover { text-decoration: underline; }
+
+/* ==========================
+   FONT SIZE ADJUSTMENTS
+========================== */
+.topic-summary, #analysis, #history, #impacts, #stakeholders, #recommendations, #sources {
+    font-size: 1rem; line-height: 1.8;
+}
+.topic-summary h2, #analysis h2, #history h2, #impacts h2, #stakeholders h2, #recommendations h2, #sources h2 {
+    font-size: 1.7rem;
+}
+.topic-summary p, #analysis p, #impacts p, #stakeholders p, #recommendations p, #sources p {
+    font-size: 1rem;
+}
+
+/* ==========================
+   RECOMMENDATIONS & SOURCES
+========================== */
+#recommendations, #sources { padding: 2rem 10%; border-radius: 10px; color: #1a1a1a; }
+#recommendations ul, #sources ul { list-style: disc inside; margin-top: 1rem; }
+#sources a { color: #ff6b6b; text-decoration: underline; }
+
+/* ==========================
+   RESPONSIVE / MOBILE VIEW
+========================== */
+@media (max-width: 1024px) {
+    .history-img { position: static; width: 100%; margin: 1rem 0; transform: none; }
+}
+
+@media (max-width: 768px) {
+    /* NAVIGATION */
+    nav .hamburger { display: block; }
+    nav ul { 
+        flex-direction: column; 
+        max-height: 0; 
+        overflow: hidden; 
+        width: 100%;
+        background-color: #1a1a1a;
+    }
+    nav ul.show { max-height: 500px; padding: 1rem 0; }
+    nav ul li { margin-left: 0; padding: 0.5rem 2rem; width: 100%; }
+
+    /* HERO */
+    header { height: 50vh; padding: 1rem; }
+    header h1 { font-size: 2.5rem; }
+    header .tagline { font-size: 1.2rem; }
+
+    /* SECTIONS */
+    section { padding: 2rem 5%; }
+
+    /* IMPACTS & STAKEHOLDERS */
+    .impact-container, .stakeholders { flex-direction: column; gap: 1.5rem; }
+
+    /* HISTORY IMAGE */
+    .history-content { max-width: 100%; }
+
+    /* TOPIC SUMMARY */
+    .topic-summary { font-size: 0.95rem; }
+    .topic-summary h2 { font-size: 1.5rem; }
+
+    /* OWNER PROFILE CARDS */
+    .owner-container { justify-content: center; }
+    .owner-card { width: 100%; max-width: 250px; }
+
+    section { scroll-margin-top: 60px; }
+}
